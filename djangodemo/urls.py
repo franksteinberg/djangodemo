@@ -21,4 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health/', views.health, name='health'),
+    path('', views.todo_list, name='todo_list'),  # Home page with TODO list
+    path('add/', views.todo_add, name='todo_add'),  # Add new TODO
+    path('edit/<int:todo_id>/', views.todo_edit, name='todo_edit'),  # Edit TODO
+    path('delete/<int:todo_id>/', views.todo_delete, name='todo_delete'),  # Delete TODO
 ]
